@@ -21,3 +21,13 @@ def image_embed(image_to_embed):
 def send_img_to_embed(input_img):
     image_to_embed = processor(images=input_img, return_tensors="pt").to(device)
     return image_embed(image_to_embed)
+
+def text_embed(text_to_embed):
+    with torch.no_grad():
+        text_embedding = model.get_text_features(**text_to_embed)
+    text_embedding = text_embedding / text_embedding.norm(p=2, dim=-1, keepdim=True)
+    return text_embedding
+
+def send_text_to_embed(input_text):
+    text_to_embed = processor(text=input_text, return_tensors="pt").to(device)
+    return text_embed(text_to_embed)

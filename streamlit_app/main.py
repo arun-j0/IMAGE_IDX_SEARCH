@@ -4,7 +4,8 @@ import streamlit as st
 PAGES = {
     "Upload Image": "upload_image.py",
     "View Embeddings": "view_embeddings.py",
-    "Find Similar Images": "find_similar_images.py"
+    "Find Similar Images": "find_similar_images.py",
+    "Search Images Using Text": "text_search.py"
 }
 
 def main():
