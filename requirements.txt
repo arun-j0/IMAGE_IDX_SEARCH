@@ -1,0 +1,6 @@
+streamlit
+pinecone-client
+torch
+transformers
+scikit-learn
+Pillow
